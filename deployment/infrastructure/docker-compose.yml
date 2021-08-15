@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - network
+
+networks: 
+  network:
